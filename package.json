@@ -2,8 +2,9 @@
   "name": "webpack-typescript-template",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "private": true,
   "scripts": {
+    "build": "webpack --config webpack.config.js --mode=production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,6 +18,8 @@
   },
   "homepage": "https://github.com/fedek6/webpack-typescript-template#readme",
   "devDependencies": {
-    "webpack": "^5.59.1"
+    "html-webpack-plugin": "^5.5.0",
+    "webpack": "^5.60.0",
+    "webpack-cli": "^4.9.1"
   }
 }
