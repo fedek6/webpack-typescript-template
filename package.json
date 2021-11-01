@@ -6,6 +6,7 @@
   "scripts": {
     "build": "NODE_ENV=production webpack --config webpack.config.js",
     "dev": "NODE_ENV=development npx webpack serve --mode=development",
+    "lint": "eslint . --ext .ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
