@@ -19,8 +19,13 @@
   },
   "homepage": "https://github.com/fedek6/webpack-typescript-template#readme",
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.2.0",
+    "@typescript-eslint/parser": "^5.2.0",
     "copy-webpack-plugin": "^9.0.1",
     "css-loader": "^6.5.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.25.2",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.4.3",
     "sass": "^1.43.4",
