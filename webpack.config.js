@@ -4,7 +4,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
-  entry: "./src/scripts/index.js",
+  entry: "./src/scripts/index.ts",
   output: {
     filename: "[name].bundle.js",
     path: path.resolve(__dirname, "dist"),
@@ -15,11 +15,17 @@ module.exports = {
     static: {
       directory: path.join(__dirname, 'public'),
     },
+    watchFiles: ['src/**/*', 'public/**/*'],
     compress: true,
     port: 9000,
   },
   module: {
     rules: [
+      {
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
+      },
       {
         test: /\.s[ac]ss$/i,
         use: [
@@ -42,6 +48,9 @@ module.exports = {
         ],
       },
     ],
+  },
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js'],
   },
   plugins: [
     new HtmlWebpackPlugin({
