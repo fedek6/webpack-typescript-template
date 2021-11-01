@@ -10,6 +10,13 @@ module.exports = {
     clean: true,
   },
   devtool: "source-map",
+  devServer: {
+    static: {
+      directory: path.join(__dirname, 'dist'),
+    },
+    compress: true,
+    port: 9000,
+  },
   module: {
     rules: [
       {
