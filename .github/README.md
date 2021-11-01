@@ -4,9 +4,10 @@
 
 Configured with:
 
-* ESLint (Airbnb).
-* TypeScript.
-* Prettier.
+- ESLint (Airbnb).
+- TypeScript.
+- Prettier.
+- SASS.
 
 ## Available Scripts
 
@@ -15,7 +16,6 @@ In the project directory, you can run:
 ### `npm run build`
 
 Build production app into `dist` directory.
-
 
 ### `npm run dev`
 
