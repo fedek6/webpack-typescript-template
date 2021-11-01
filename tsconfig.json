@@ -1,18 +1,16 @@
 {
   "compilerOptions": {
-    "outDir": "./dist/",
-    "noImplicitAny": true,
-    "module": "es6",
     "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "jsx": "react",
-    "allowJs": true,
+    "module": "es6",
+    "strict": true,
     "moduleResolution": "node",
     "esModuleInterop": true,
+    "allowJs": true,
+    "noImplicitAny": true,
     "resolveJsonModule": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "isolatedModules": true,
+    "outDir": "./dist/",
+    "lib": ["dom", "esnext"],
+    "jsx": "react"
   },
   "include": ["src/scripts/**/*"]
 }
