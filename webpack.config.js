@@ -13,9 +13,9 @@ module.exports = {
   devtool: "source-map",
   devServer: {
     static: {
-      directory: path.join(__dirname, 'public'),
+      directory: path.join(__dirname, "public"),
     },
-    watchFiles: ['src/**/*', 'public/**/*'],
+    watchFiles: ["src/**/*", "public/**/*"],
     compress: true,
     port: 9000,
   },
@@ -23,7 +23,7 @@ module.exports = {
     rules: [
       {
         test: /\.tsx?$/,
-        use: 'ts-loader',
+        use: "ts-loader",
         exclude: /node_modules/,
       },
       {
@@ -50,7 +50,7 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js'],
+    extensions: [".tsx", ".ts", ".js"],
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -61,9 +61,7 @@ module.exports = {
       chunkFilename: "[id].css",
     }),
     new CopyPlugin({
-      patterns: [
-        { from: "public", to: "." },
-      ],
+      patterns: [{ from: "public", to: "." }],
     }),
   ],
 };
