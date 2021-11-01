@@ -4,7 +4,7 @@
   "description": "",
   "private": true,
   "scripts": {
-    "build": "webpack --config webpack.config.js --mode=production",
+    "build": "NODE_ENV=production webpack --config webpack.config.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,7 +18,12 @@
   },
   "homepage": "https://github.com/fedek6/webpack-typescript-template#readme",
   "devDependencies": {
+    "css-loader": "^6.5.0",
     "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.4.3",
+    "sass": "^1.43.4",
+    "sass-loader": "^12.3.0",
+    "style-loader": "^3.3.1",
     "webpack": "^5.60.0",
     "webpack-cli": "^4.9.1"
   }
