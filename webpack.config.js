@@ -2,6 +2,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
+const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
 
 module.exports = {
   entry: "./src/scripts/index.ts",
@@ -27,7 +28,7 @@ module.exports = {
         exclude: /node_modules/,
       },
       {
-        test: /\.s[ac]ss$/i,
+        test: /\.s?[ac]ss$/i,
         use: [
           // fallback to style-loader in development
           process.env.NODE_ENV !== "production"
@@ -37,6 +38,14 @@ module.exports = {
             loader: "css-loader",
             options: {
               sourceMap: true,
+            },
+          },
+          {
+            loader: "postcss-loader",
+            options: {
+              postcssOptions: {
+                plugins: [["postcss-preset-env"]],
+              },
             },
           },
           {
@@ -61,7 +70,8 @@ module.exports = {
       chunkFilename: "[id].css",
     }),
     new CopyPlugin({
-      patterns: [{ from: "public", to: "." }],
+      patterns: [{from: "public", to: "."}],
     }),
+    new FaviconsWebpackPlugin("src/favicon.png"),
   ],
 };
