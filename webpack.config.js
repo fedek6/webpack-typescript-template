@@ -56,6 +56,14 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: "file-loader",
+          },
+        ],
+      },
     ],
   },
   resolve: {
@@ -70,7 +78,10 @@ module.exports = {
       chunkFilename: "[id].css",
     }),
     new CopyPlugin({
-      patterns: [{from: "public", to: "."}],
+      patterns: [
+        {from: "public", to: "."},
+        {from: "./src/images", to: "./images"},
+      ],
     }),
     new FaviconsWebpackPlugin("src/favicon.png"),
   ],
